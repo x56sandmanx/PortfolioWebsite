@@ -1,42 +1,121 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.homePageContainer {
+  @apply h-screen w-[calc(100vw-17px)] overflow-x-hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.aboutMeContainer {
+  @apply h-screen w-[calc(100vw-17px)] overflow-x-hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.navBar {
+  @apply flex items-center w-[calc(100vw-17px)] h-12;
+}
+
+.navBar p {
+  @apply text-lg text-white font-inter font-normal ml-10 transition-colors;
+}
+
+.navBar p:hover {
+  @apply text-gray-400 transition-colors cursor-pointer;
+}
+
+.homePageIntro {
+  @apply flex flex-col h-[calc(100vh-48px)] justify-center items-center;
+  animation: fadeInRight 1s;
+}
+
+.homePageIntro h1 {
+  @apply flex justify-center font-inter font-bold text-9xl;
+}
+
+.homePageIntro p {
+  @apply flex justify-center mt-5 font-light font-inter;
+}
+
+.homePageButtons {
+  @apply flex gap-8 justify-center mt-8
+}
+
+.gitHubButton {
+  @apply w-8 h-8;
+}
+
+.gitHubButton:hover {
+  @apply cursor-pointer;
+}
+
+.linkedInButton {
+  @apply w-10 h-8;
+}
+
+.linkedInButton:hover {
+  @apply cursor-pointer;
+}
+.scrollDownImage {
+  @apply animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full absolute bottom-0 mb-10;
+}
+
+.scrollDownImageSVG {
+  @apply w-6 h-6 text-violet-500 fill-none stroke-2 stroke-violet-500;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.scrollDownImage:hover {
+  @apply cursor-pointer;
+}
+
+.scrollForMore {
+  @apply absolute bottom-0 mb-2;
+}
+
+.aboutMeInfo {
+  @apply flex h-screen justify-center items-center;
+  animation: fadeInLeft 1s;
+}
+
+.animateDown {
+  @apply w-72 flex flex-col justify-center items-center;
+  animation: fadeInDown 1s;
+  animation-delay: 1.5s;
+}
+
+.aboutMeInfo h1 {
+  @apply font-inter font-bold text-6xl;
+}
+
+@keyframes fadeInRight {
+  0% { 
+    opacity: 0;
+    transform: translateX(-40px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1; 
+    transform: translateX(0px);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes fadeInLeft {
+  0% { 
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1; 
+    transform: translateX(0px);
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@keyframes fadeInDown {
+  0% { 
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    position: absolute;
+    bottom: 0;
+    opacity: 1; 
+    transform: translateY(0px);
+  }
 }
