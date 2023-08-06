@@ -68,6 +68,38 @@ body {
   @apply flex justify-center mt-5 font-light font-inter;
 }
 
+.homePageIntroContainer {
+  @apply p-20 relative;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+  z-index: 1;
+}
+
+.homeGlowWrapper {
+  position: relative;
+}
+
+.homeGlow::before,
+.homeGlow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #e6fb04, #ff6600, #00ff66, #00ffff, #ff00ff, #ff0099, #6e0dd0, #ff3300, #099fff);
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.homeGlow::after {
+  filter: blur(25px);
+}
+
+.fade-in {
+  animation: fadeIn 1s;
+}
+
 .homePageButtons {
   @apply flex gap-8 justify-center mt-8;
   animation: fadeInRight 1s;
@@ -117,12 +149,40 @@ body {
   @apply hidden;
 }
 
+.aboutMeInfoContainer {
+  @apply flex flex-col p-20 relative;
+  background: linear-gradient(0deg, black, rgb(44, 43, 43));
+  z-index: 1;
+}
+
+.aboutMeGlowWrapper {
+  position: relative;
+}
+
+.aboutMeGlow::before,
+.aboutMeGlow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #ffcccc, #ffcc99, #ffcc66, #ffcc33, #ffcc00, #ffff00, #ccffcc, #99ff99, #66ff66);
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.aboutMeGlow::after {
+  filter: blur(25px);
+}
+
 .aboutMeInfoAnimate {
   @apply flex flex-col h-screen justify-center items-center;
 }
 
 .aboutMeInfoAnimate h1 {
-  @apply font-inter font-bold text-8xl ml-56;
+  @apply font-inter font-bold text-8xl ml-auto;
   animation: fadeInLeft 1s;
 }
 
@@ -150,9 +210,7 @@ body {
 }
 
 .cardCarouselContainer {
-  @apply flex justify-center items-center h-500 w-[calc(100vw-400px)] border-2 rounded-3xl border-white overflow-x-auto;
-  box-shadow: 10px 5px 10px black;
-  backdrop-filter: blur(100px);
+  @apply flex justify-center items-center h-500 w-[calc(100vw-400px)] overflow-x-auto;
   animation: fadeInDown2 1s;
   animation-delay: 0.30s;
   animation-fill-mode: forwards;
@@ -191,6 +249,53 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
+.projectsInfoContainer {
+  @apply p-10 relative;
+  background: linear-gradient(0deg, black, rgb(44,43,43));
+}
+
+.projectsGlowWrapper {
+  position: relative;
+}
+
+.projectsGlow::before,
+.projectsGlow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #000033, #000066, #000099, #0000cc, #0000ff, #3366ff, #6699ff, #99ccff, #ccffff);
+  background-size: 400%;
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  z-index: -1;
+  animation: animate 20s linear infinite;
+}
+
+.projectsGlow::after {
+  filter: blur(25px);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 @keyframes fadeInRight {
   0% { 
