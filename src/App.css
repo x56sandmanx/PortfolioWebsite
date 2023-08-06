@@ -1,3 +1,7 @@
+body {
+  background: linear-gradient(to bottom, #000000, #505050);
+}
+
 .homePageContainer {
   @apply h-screen w-[calc(100vw-17px)] overflow-x-hidden;
 }
@@ -6,8 +10,31 @@
   @apply h-screen w-[calc(100vw-17px)] overflow-x-hidden;
 }
 
+.projectsContainer {
+  @apply flex items-center justify-center h-screen w-[calc(100vw-17px)] overflow-x-hidden;
+}
+
 .navBar {
-  @apply flex items-center w-[calc(100vw-17px)] h-12;
+  @apply flex items-center w-[calc(100vw-17px)] h-12 gap-9 ml-10 pt-5;
+}
+
+.navBar span {
+  @apply font-inter text-xl;
+  display: inline-block;
+  padding-bottom:2px;
+  background-image: linear-gradient(#fff 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;
+}
+
+.navBar span:hover {
+  @apply cursor-pointer;
+  background-position: 100% 100%;
+  background-size: 100% 2px;
 }
 
 .navBar p {
@@ -20,7 +47,17 @@
 
 .homePageIntro {
   @apply flex flex-col h-[calc(100vh-48px)] justify-center items-center;
+}
+
+.homePageIntro h1 {
   animation: fadeInRight 1s;
+}
+
+.homePageIntro p {
+  animation: fadeInRight 1s;
+  animation-delay: 0.20s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .homePageIntro h1 {
@@ -32,23 +69,31 @@
 }
 
 .homePageButtons {
-  @apply flex gap-8 justify-center mt-8
+  @apply flex gap-8 justify-center mt-8;
+  animation: fadeInRight 1s;
+  animation-delay: 0.40s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .gitHubButton {
   @apply w-8 h-8;
+  transition: transform 0.3s ease;
 }
 
 .gitHubButton:hover {
   @apply cursor-pointer;
+  transform: translateY(-5px);
 }
 
 .linkedInButton {
   @apply w-10 h-8;
+  transition: transform 0.3s ease;
 }
 
 .linkedInButton:hover {
   @apply cursor-pointer;
+  transform: translateY(-5px);
 }
 .scrollDownImage {
   @apply animate-bounce bg-white dark:bg-slate-800 p-2 w-10 h-10 ring-1 ring-slate-900/5 dark:ring-slate-200/20 shadow-lg rounded-full absolute bottom-0 mb-10;
@@ -69,8 +114,24 @@
 }
 
 .aboutMeInfo {
-  @apply flex h-screen justify-center items-center;
+  @apply hidden;
+}
+
+.aboutMeInfoAnimate {
+  @apply flex flex-col h-screen justify-center items-center;
+}
+
+.aboutMeInfoAnimate h1 {
+  @apply font-inter font-bold text-8xl ml-56;
   animation: fadeInLeft 1s;
+}
+
+.aboutMeInfoAnimate p{
+  @apply w-700 mt-12 font-inter font-light text-center mr-56;
+  animation: fadeInRight 1s;
+  animation-delay: 0.30s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .animateDown {
@@ -79,9 +140,57 @@
   animation-delay: 1.5s;
 }
 
-.aboutMeInfo h1 {
-  @apply font-inter font-bold text-6xl;
+.projectsInfo {
+  @apply hidden;
 }
+
+.projectsInfoAnimate h1 {
+  @apply font-inter font-bold text-8xl text-center mb-20;
+  animation: fadeInDown2 1s;
+}
+
+.cardCarouselContainer {
+  @apply flex justify-center items-center h-500 w-[calc(100vw-400px)] border-2 rounded-3xl border-white overflow-x-auto;
+  box-shadow: 10px 5px 10px black;
+  backdrop-filter: blur(100px);
+  animation: fadeInDown2 1s;
+  animation-delay: 0.30s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+.cardCarousel {
+  @apply flex justify-center items-center h-full gap-12;
+  width: 99%;
+}
+
+.cardContainer {
+  @apply h-450 w-300 border-2 border-black rounded-3xl bg-white shadow-lg flex-shrink-0;
+  transition: transform 0.3s;
+  transform: scale(1);
+}
+
+.cardContainer:hover {
+  @apply cursor-pointer;
+  transition: transform 0.3s;
+  transform: scale(1.05);
+}
+.cardContainer img {
+  @apply w-full h-3/5 object-cover rounded-t-3xl border-b border-black;
+}
+
+.cardContainer h2 {
+  @apply flex justify-center font-inter font-bold text-black text-2xl;
+}
+
+.cardContainer p {
+  @apply pl-2 pr-2 flex justify-center text-center h-36 font-inter font-light text-black text-base;
+}
+
+.cardImage {
+  transition: all 0.3s ease-in-out;
+}
+
 
 @keyframes fadeInRight {
   0% { 
@@ -105,6 +214,17 @@
   }
 }
 
+@keyframes fadeInDown2 {
+  0% { 
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1; 
+    transform: translateY(0px);
+  }
+}
+
 @keyframes fadeInDown {
   0% { 
     position: absolute;
@@ -115,6 +235,17 @@
   100% {
     position: absolute;
     bottom: 0;
+    opacity: 1; 
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeInUp {
+  0% { 
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
     opacity: 1; 
     transform: translateY(0px);
   }
