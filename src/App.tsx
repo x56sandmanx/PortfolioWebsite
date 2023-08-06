@@ -5,6 +5,8 @@ import githubLogo from './assets/githubLogo.png'
 import linkedInLogo from './assets/linkedInLogo.png'
 import sandBotImage from './assets/sandBotImage.jpeg'
 import uscLogo from './assets/USClogo.png'
+import nds from './assets/nds.png'
+import StudiVerse from './assets/StudiverseLogo3.png'
 
 
 interface VisibleElements {
@@ -104,7 +106,7 @@ function App() {
         </div>
       </div>
     </div>
-    
+
     <div id='about_me' className='aboutMeContainer'>
       <div className={`aboutMeInfo${visibleElements['about_me'] ? 'Animate' : ''}`}>
         <div className='aboutMeGlowWrapper'>
@@ -131,16 +133,15 @@ function App() {
                 <div className='cardCarousel'>
                   <CardView link='https://github.com/x56sandmanx/SandBot' image={sandBotImage} header='SandBot'
                   text='SandBot is a Discord Bot made using Python. This bot was able to welcome new members
-                        to the server, run moderation commands, and respond to members!'/>
+                        to the server, run moderation commands, and respond to members.'/>
                   <CardView link='https://github.com/Baker-0502/CriminalDatabaseApp' image={uscLogo} header='Criminal Database App'
                   text='The Criminal Database App was created with a group of 4 people in our Software Engineering class. Where we created
-                        a local database that stored user data and could be retrieved from certian users!'/>
-                  <CardView link='https://github.com/Baker-0502/CriminalDatabaseApp' image={uscLogo} header='Criminal Database App'
-                  text='The Criminal Database App was created with a group of 4 people in our Software Engineering class. Where we created
-                  a local database that stored user data and could be retrieved from certian users!'/>
-                  <CardView link='https://github.com/Baker-0502/CriminalDatabaseApp' image={uscLogo} header='Criminal Database App'
-                  text='The Criminal Database App was created with a group of 4 people in our Software Engineering class. Where we created
-                  a local database that stored user data and could be retrieved from certian users!'/> 
+                        a local database that stored user data and could be retrieved from certian users.'/>
+                  <CardView link='https://sccapstone.github.io/CAPSTONED/' image={StudiVerse} header='StudiVerse'
+                  text='StudiVerse was a senior capstone project for USC, where I worked with 4 team members on creating a mobile app using React and JavaScript for the
+                        front end, and used Firebase for the backend.'/>
+                  <CardView link='https://northerndevstudio.com/' image={nds} header='Northern Dev Studio'
+                  text='Northern Dev Studio is a small company where we make games using Unity, mobile apps using Swift, and Web Apps using React.'/> 
                 </div>
               </div>
             </div>
