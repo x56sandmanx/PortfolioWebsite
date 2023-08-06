@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Tilt from 'react-parallax-tilt'
 import { Snackbar } from '@mui/material'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
-import Slide, { SlideProps } from '@mui/material/Slide'
+import Slide from '@mui/material/Slide'
 import './App.css'
 import githubLogo from './assets/githubLogo.png'
 import linkedInLogo from './assets/linkedInLogo.png'
@@ -10,8 +10,6 @@ import sandBotImage from './assets/sandBotImage.jpeg'
 import uscLogo from './assets/USClogo.png'
 import nds from './assets/nds.png'
 import StudiVerse from './assets/StudiverseLogo3.png'
-
-
 
 interface VisibleElements {
   [elemendId: string]: boolean
@@ -90,7 +88,7 @@ function App() {
     )
   }
 
-  const handleClick = (event?: React.SyntheticEvent | Event, reason?: string) => {
+  const handleClick = (_event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
     }
