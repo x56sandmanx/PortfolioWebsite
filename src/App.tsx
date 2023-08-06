@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
 
-    const elementIds: string[] = ['about_me', 'projects', 'contact_me']
+    const elementIds: string[] = ['home', 'about_me', 'projects', 'contact_me']
 
     const handleIntersection: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
@@ -81,8 +81,8 @@ function App() {
       <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} perspective={1000} tiltReverse={true}>
         <div onClick={() => window.open(link, '_blank')} className='cardContainer'>
           <img src={image} alt='img' draggable={false} />
-          <h2 draggable={false}>{header}</h2>
-          <p draggable={false}>{text}</p>
+            <h2 draggable={false}>{header}</h2>
+            <p draggable={false}>{text}</p>
         </div>
       </Tilt>
     )
@@ -235,6 +235,21 @@ function App() {
           </Alert>
         )}
       </Snackbar>
+      <footer>
+        <div className='footerNavBar'>
+          <span onClick={() => scrollToElement('home')}>Home</span>
+          <span onClick={() => scrollToElement('about_me')}>About Me</span>
+          <span onClick={() => scrollToElement('projects')}>Projects</span>
+          <span onClick={() => scrollToElement('contact_me')}>Contact Me</span>
+        </div>
+        <div className='flex gap-8 mt-4'>
+          <img className='gitHubButton' src={githubLogo} alt='githubLogo' onClick={() => window.open('https://github.com/x56sandmanx', '_blank')}/>
+          <img className='linkedInButton' src={linkedInLogo} alt='linkedInLogo' onClick={() => window.open('https://www.linkedin.com/in/colin-sandman-047305237', '_blank')}/>
+        </div>
+        <div>
+        <p className='mt-5'>&copy; {new Date().getFullYear()} colinsandman.dev. All rights reserved.</p>
+        </div>
+      </footer>
     </>
   )
 }

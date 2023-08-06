@@ -209,12 +209,12 @@ body {
 }
 
 .projectsInfoAnimate h1 {
-  @apply font-inter font-bold text-8xl text-center mb-20;
+  @apply font-inter font-bold text-8xl text-center;
   animation: fadeInDown2 1s;
 }
 
 .cardCarouselContainer {
-  @apply flex justify-center items-center h-500 w-[calc(100vw-400px)] overflow-x-auto;
+  @apply flex justify-center items-center h-450 w-[calc(100vw-600px)] overflow-x-auto;
   animation: fadeInDown2 1s;
   animation-delay: 0.30s;
   animation-fill-mode: forwards;
@@ -223,12 +223,13 @@ body {
 
 .cardCarousel {
   @apply flex justify-center items-center h-full gap-12;
-  width: 99%;
+  width: 100%;
 }
 
 .cardContainer {
-  @apply h-450 w-300 border-2 border-black rounded-3xl bg-white shadow-lg flex-shrink-0;
+  @apply h-400 w-250 border-2 border-black rounded-3xl bg-gray-300 shadow-lg;
   transition: transform 0.3s;
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
   transform: scale(1);
 }
 
@@ -242,11 +243,11 @@ body {
 }
 
 .cardContainer h2 {
-  @apply flex justify-center font-inter font-bold text-black text-2xl;
+  @apply flex justify-center font-inter font-bold text-black text-xl;
 }
 
 .cardContainer p {
-  @apply pl-2 pr-2 flex justify-center text-center h-36 font-inter font-light text-black text-base;
+  @apply pl-2 pr-2 flex justify-center text-center font-inter font-light text-black text-xs;
 }
 
 .cardImage {
@@ -386,7 +387,32 @@ body {
   outline: none;
 }
 
+footer {
+  @apply flex flex-col justify-center items-center h-40 bg-black;
+}
 
+.footerNavBar {
+  @apply flex gap-9;
+}
+
+.footerNavBar span {
+  @apply font-inter text-xl;
+  display: inline-block;
+  padding-bottom:2px;
+  background-image: linear-gradient(#fff 0 0);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.3s,
+    background-position 0s 0.3s;
+}
+
+.footerNavBar span:hover {
+  @apply cursor-pointer;
+  background-position: 100% 100%;
+  background-size: 100% 2px;
+}
 
 @keyframes animate {
   0% {
