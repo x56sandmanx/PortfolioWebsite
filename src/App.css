@@ -214,7 +214,7 @@ body {
 }
 
 .cardCarouselContainer {
-  @apply flex justify-center items-center h-450 w-[calc(100vw-600px)] overflow-x-auto;
+  @apply flex justify-center items-center h-450 w-[calc(100vw-400px)] overflow-x-auto;
   animation: fadeInDown2 1s;
   animation-delay: 0.30s;
   animation-fill-mode: forwards;
