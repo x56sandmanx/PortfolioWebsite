@@ -281,6 +281,10 @@ body {
   filter: blur(25px);
 }
 
+.contactMeInfo {
+  @apply hidden;
+}
+
 .contactMeInfoAnimate {
   @apply flex flex-col h-screen justify-center items-center;
 }
@@ -378,12 +382,23 @@ body {
 
 .contactForm button {
   @apply w-40 mt-10 bg-gray-600;
-  transition: transform 0.3s ease;
+  transition: background-color 0.3s ease;
+  animation: fadeInUp 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  animation-delay: 1.5s;
   outline: none;
 }
 
 .contactForm button:hover {
-  transform: translateY(-5px);
+  @apply bg-gray-500;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.contactForm button:active {
+  @apply bg-gray-900;
+  transition: background-color 0.3s ease;
   outline: none;
 }
 
